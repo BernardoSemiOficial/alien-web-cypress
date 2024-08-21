@@ -96,4 +96,15 @@ describe("Image Registration", () => {
       });
     });
   });
+
+  it("Refreshing the page after submitting an image clicking in the submit button", () => {
+    alienForm.typeTitle("Alien BR");
+    alienForm.typeUrl(imageURL);
+
+    alienForm.elements.buttonSubmit().click();
+
+    alienForm.elements.listImages().should("have.length", 4);
+    cy.reload();
+    alienForm.elements.listImages().should("have.length", 4);
+  });
 });
