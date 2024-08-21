@@ -4,7 +4,7 @@
   "description": "Estudo sobre cypress",
   "main": "index.js",
   "scripts": {
-    "cy:open": "cypress open",
+    "cy:open": "cypress open --browser chrome",
     "cy:headless": "cypress run --headless"
   },
   "author": "Bernardo Pereira",
