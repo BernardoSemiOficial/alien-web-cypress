@@ -5,6 +5,7 @@ class AlienForm {
     buttonSubmit: () => cy.get("#btnSubmit"),
     titleFeedback: () => cy.get("#titleFeedback"),
     urlFeedback: () => cy.get("#urlFeedback"),
+    listImages: () => cy.get("#card-list article"),
   };
 
   typeTitle(title) {
@@ -20,10 +21,15 @@ class AlienForm {
 
 const alienForm = new AlienForm();
 
-describe("Image Registration", () => {
-  it("Submitting an image with invalid inputs", () => {
-    cy.visit("/");
+const imageURL =
+  "https://cdn.mos.cms.futurecdn.net/eM9EvWyDxXcnQTTyH8c8p5-1200-80.jpg";
 
+describe("Image Registration", () => {
+  beforeEach(() => {
+    cy.visit("/");
+  });
+
+  it("Submitting an image with invalid inputs", () => {
     alienForm.typeTitle("");
     alienForm.typeUrl("");
     alienForm.elements.buttonSubmit().click();
@@ -39,6 +45,27 @@ describe("Image Registration", () => {
     });
     alienForm.elements.urlInput().should(([element]) => {
       expect(element.validity.valueMissing).to.true;
+    });
+  });
+
+  it("Submitting an image with valid inputs using enter key", () => {
+    alienForm.typeTitle("Alien BR");
+    alienForm.typeUrl(imageURL);
+
+    alienForm.elements.urlInput().type("{enter}");
+
+    alienForm.elements.listImages().should("have.length", 4);
+    alienForm.elements.titleInput().should("have.value", "");
+    alienForm.elements.urlInput().should("have.value", "");
+    const localStorage = cy.getAllLocalStorage();
+    localStorage.then((data) => {
+      expect(data).to.deep.equal({
+        "https://erickwendel.github.io": {
+          "tdd-ew-db": JSON.stringify([
+            { title: "Alien BR", imageUrl: imageURL },
+          ]),
+        },
+      });
     });
   });
 });
