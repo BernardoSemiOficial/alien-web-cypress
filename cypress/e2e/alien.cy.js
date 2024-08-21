@@ -75,4 +75,25 @@ describe("Image Registration", () => {
       });
     });
   });
+
+  it("Submitting an image and updating the list", () => {
+    alienForm.typeTitle("Alien BR");
+    alienForm.typeUrl(imageURL);
+
+    alienForm.elements.buttonSubmit().click();
+
+    alienForm.elements.listImages().should("have.length", 4);
+    alienForm.elements.titleInput().should("have.value", "");
+    alienForm.elements.urlInput().should("have.value", "");
+    const localStorage = cy.getAllLocalStorage();
+    localStorage.then((data) => {
+      expect(data).to.deep.equal({
+        "https://erickwendel.github.io": {
+          "tdd-ew-db": JSON.stringify([
+            { title: "Alien BR", imageUrl: imageURL },
+          ]),
+        },
+      });
+    });
+  });
 });
