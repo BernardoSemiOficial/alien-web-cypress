@@ -1,5 +1,7 @@
 # Testes automatizados com cypress
 
+![Vídeo](./public/project.webm)
+
 Estou realizando testes automatizados em uma aplicação disponibilizada nessa URL.
 
 https://erickwendel.github.io/vanilla-js-web-app-example/
@@ -18,7 +20,7 @@ Funcionalidade: Registro de Imagem
 - E eu devo ver a mensagem "Por favor, digite uma URL válida" acima do campo de imageUrl
 - E eu devo ver um ícone de exclamação nos campos de título e URL
 
-2.Cenário: Enviando uma imagem com entradas válidas usando a tecla enter
+  2.Cenário: Enviando uma imagem com entradas válidas usando a tecla enter
 
 - Dado que estou na página de registro de imagem
 - Quando eu digitar "Alien BR" no campo de título
@@ -30,7 +32,7 @@ Funcionalidade: Registro de Imagem
 - E o novo item deve ser armazenado no localStorage
 - Então os campos devem ser limpos
 
-3.Cenário: Enviando uma imagem e atualizando a lista
+  3.Cenário: Enviando uma imagem e atualizando a lista
 
 - Dado que estou na página de registro de imagem
 - Então eu digitei "BR Alien" no campo de título
