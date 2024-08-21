@@ -1,6 +1,6 @@
 # Testes automatizados com cypress
 
-[vídeo do projeto](./public/project.webm)
+[project.webm](https://github.com/user-attachments/assets/8fb2731d-3e5f-41de-a738-f2a91153a4a7)
 
 Estou realizando testes automatizados em uma aplicação disponibilizada nessa URL.
 
