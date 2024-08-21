@@ -1,6 +1,6 @@
 # Testes automatizados com cypress
 
-[project.webm](https://github.com/user-attachments/assets/8fb2731d-3e5f-41de-a738-f2a91153a4a7)
+[vídeo do projeto](https://github.com/user-attachments/assets/8fb2731d-3e5f-41de-a738-f2a91153a4a7)
 
 Estou realizando testes automatizados em uma aplicação disponibilizada nessa URL.
 
@@ -8,9 +8,9 @@ https://erickwendel.github.io/vanilla-js-web-app-example/
 
 O objetivo dos meus testes foram definidos:
 
-Funcionalidade: Registro de Imagem
+Funcionalidades: Registro de Imagem
 
-1.Cenário: Enviando uma imagem com entradas inválidas
+1. Cenário: Enviando uma imagem com entradas inválidas
 
 - Dado que estou na página de registro de imagem
 - Quando eu digitar "" no campo de título
@@ -20,7 +20,7 @@ Funcionalidade: Registro de Imagem
 - E eu devo ver a mensagem "Por favor, digite uma URL válida" acima do campo de imageUrl
 - E eu devo ver um ícone de exclamação nos campos de título e URL
 
-  2.Cenário: Enviando uma imagem com entradas válidas usando a tecla enter
+2. Cenário: Enviando uma imagem com entradas válidas usando a tecla enter
 
 - Dado que estou na página de registro de imagem
 - Quando eu digitar "Alien BR" no campo de título
@@ -32,7 +32,7 @@ Funcionalidade: Registro de Imagem
 - E o novo item deve ser armazenado no localStorage
 - Então os campos devem ser limpos
 
-  3.Cenário: Enviando uma imagem e atualizando a lista
+3. Cenário: Enviando uma imagem e atualizando a lista
 
 - Dado que estou na página de registro de imagem
 - Então eu digitei "BR Alien" no campo de título
