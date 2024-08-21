@@ -52,6 +52,13 @@ describe("Image Registration", () => {
     alienForm.typeTitle("Alien BR");
     alienForm.typeUrl(imageURL);
 
+    alienForm.elements.titleInput().should(([element]) => {
+      expect(element.validity.valid).to.true;
+    });
+    alienForm.elements.urlInput().should(([element]) => {
+      expect(element.validity.valid).to.true;
+    });
+
     alienForm.elements.urlInput().type("{enter}");
 
     alienForm.elements.listImages().should("have.length", 4);
