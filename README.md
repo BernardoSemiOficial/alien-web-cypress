@@ -1,6 +1,6 @@
 # Testes automatizados com cypress
 
-![Vídeo](./public/project.webm)
+[vídeo do projeto](./public/project.webm)
 
 Estou realizando testes automatizados em uma aplicação disponibilizada nessa URL.
 
